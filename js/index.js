@@ -62,3 +62,30 @@ for (let i = 0; i <= lorem.length; i++) {
 
 console.log(numberOfWords);
 console.log(et)
+
+
+let phraseToCheck = "!Lagerregal,."
+let regular = ""
+let inverted = ""
+
+for (let i = 0; i <= phraseToCheck.length-1; i++) {
+  if (phraseToCheck[i] === " " || phraseToCheck[i] === "," || phraseToCheck[i] === "." || phraseToCheck[i] === "?" || phraseToCheck[i] === "!") {
+    continue;
+  } else {
+  regular += phraseToCheck[i].toLowerCase();
+  }
+}
+
+for (let i = phraseToCheck.length-1; i >= 0; i--) {
+  if (phraseToCheck[i] === " " || phraseToCheck[i] === "," || phraseToCheck[i] === "." || phraseToCheck[i] === "?" || phraseToCheck[i] === "!") {
+    continue;
+  } else {
+  inverted += phraseToCheck[i].toLowerCase();
+  }
+}
+
+if (regular === inverted) {
+  console.log(`Nice, "${regular}" is a palindrome!`)
+} else {
+  console.log(`"${inverted}" is not a palindrome.`)
+}
